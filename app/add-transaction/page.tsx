@@ -28,7 +28,6 @@ export default function Page() {
     if (error) {
       console.error("Error inserting data:", error);
     } else {
-      // Memastikan bahwa data adalah array sebelum melakukan spread
       setFuelPurchases([...fuelPurchases, ...(data || [])]);
       setAmount("");
       setCategory("");

@@ -7,14 +7,14 @@ export default function Home() {
   return (
     <div>
       {/* <Header /> */}
-      <AuthButton />
-      {/* <div className="hidden md:block">
+      {/* <AuthButton /> */}
+      <div className="hidden md:block">
         <ResponsiveDesktop />
       </div>
 
       <div className="block md:hidden">
         <ResponsiveMobile />
-      </div> */}
+      </div>
     </div>
   );
 }
