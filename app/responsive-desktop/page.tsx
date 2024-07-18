@@ -1,4 +1,3 @@
-// components/ResponsiveComponent.js
 export default function ResponsiveDesktop() {
   return (
     <div>
