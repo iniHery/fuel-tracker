@@ -1,5 +1,6 @@
 "use client";
 
+import MenuBar from "@/components/menu-bar/page";
 import { createClient } from "@/utils/supabase/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -37,7 +38,7 @@ export default function Page() {
   };
 
   return (
-    <div className="h-screen max-w-sm">
+    <div className="h-full max-w-sm">
       <div className="container mx-auto p-4">
         <div className="flex items-center">
           <Link href="/">
@@ -88,22 +89,22 @@ export default function Page() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <button
                   type="button"
-                  onClick={() => setCategory("pertamax-turbo")}
-                  className={`px-4 py-2 rounded-xl bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
-                    category === "pertamax-turbo"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-black"
+                  onClick={() => setCategory("pertamax")}
+                  className={`px-4 py-2 rounded-xl  border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
+                    category === "pertamax"
+                      ? "bg-[#2945FF] text-white"
+                      : "bg-white text-black"
                   }`}
                 >
-                  Pertamax Turbo
+                  Pertamax
                 </button>
                 <button
                   type="button"
                   onClick={() => setCategory("pertamina-dex")}
-                  className={`px-4 py-2 rounded-xl bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
+                  className={`px-4 py-2 rounded-xl  border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
                     category === "pertamina-dex"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-black"
+                      ? "bg-[#2945FF] text-white"
+                      : "bg-white text-black"
                   }`}
                 >
                   Pertamina Dex
@@ -114,14 +115,14 @@ export default function Page() {
                 <div className="basis-2/3">
                   <button
                     type="button"
-                    onClick={() => setCategory("pertamina-dex")}
-                    className={`px-4 py-2 w-full rounded-xl bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
-                      category === "pertamina-dex"
-                        ? "bg-blue-500 text-white"
-                        : "bg-gray-200 text-black"
+                    onClick={() => setCategory("dexlite")}
+                    className={`px-4 py-2 w-full rounded-xl border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
+                      category === "dexlite"
+                        ? "bg-[#2945FF] text-white"
+                        : "bg-white text-black"
                     }`}
                   >
-                    Pertamina Dex
+                    Dexlite
                   </button>
                 </div>
                 <div className="w-full basis-1/3">
@@ -129,10 +130,10 @@ export default function Page() {
                     <button
                       type="button"
                       onClick={() => setCategory("solar")}
-                      className={`px-4 py-2 rounded-xl w-full bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
+                      className={`px-4 py-2 rounded-xl w-full border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
                         category === "solar"
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-200 text-black"
+                          ? "bg-[#2945FF] text-white"
+                          : "bg-white text-black"
                       }`}
                     >
                       Solar
@@ -144,10 +145,10 @@ export default function Page() {
                 <button
                   type="button"
                   onClick={() => setCategory("pertamax-turbo")}
-                  className={`px-4 py-2 rounded-xl w-full bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
+                  className={`px-4 py-2 rounded-xl w-full border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)] ${
                     category === "pertamax-turbo"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-black"
+                      ? "bg-[#2945FF] text-white"
+                      : "bg-white text-black"
                   }`}
                 >
                   Pertamax Turbo
@@ -178,7 +179,7 @@ export default function Page() {
             />
           </div>
 
-          <div className="mt-32">
+          <div className="my-32">
             <button
               type="submit"
               className="w-full p-4 text-white font-medium bg-[#2945FF] rounded-xl border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.8),0_0px_0px_rgba(0,0,0,0.8)]"
@@ -189,7 +190,7 @@ export default function Page() {
         </form>
       </div>
 
-      {/* <pre>{JSON.stringify(fuelPurchases, null, 2)}</pre> */}
+      <MenuBar />
     </div>
   );
 }

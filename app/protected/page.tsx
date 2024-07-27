@@ -55,3 +55,29 @@ export default async function ProtectedPage() {
     </div>
   );
 }
+
+// import { useEffect, useState } from "react";
+// import { supabase } from "../utils/supabase/client";
+// import { useRouter } from "next/router";
+
+// const ProtectedPage = () => {
+//   const [user, setUser] = useState(null);
+//   const router = useRouter();
+
+//   useEffect(() => {
+//     const session = supabase.auth.session();
+//     setUser(session?.user ?? null);
+
+//     if (!session) {
+//       router.push("/login");
+//     }
+//   }, []);
+
+//   return (
+//     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
+//       {user ? <div>Welcome, {user.email}!</div> : <div>Loading...</div>}
+//     </div>
+//   );
+// };
+
+// export default ProtectedPage;
