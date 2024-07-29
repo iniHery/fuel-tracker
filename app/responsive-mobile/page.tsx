@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { supabase } from "../../utils/supabase/client";
 import Link from "next/link";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 
 export default function FuelPurchasesPage() {
   const [fuelPurchases, setFuelPurchases] = useState<any[]>([]);
-  const supabase = createClient();
   const [totalExpenses, setTotalExpenses] = useState(0);
   const [lastTransaction, setLastTransaction] = useState<any>(null);
+
+  const supabase = createClient();
 
   useEffect(() => {
     const getData = async () => {
