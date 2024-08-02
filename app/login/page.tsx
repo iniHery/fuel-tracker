@@ -6,9 +6,6 @@
 // import { headers } from "next/headers";
 // import { createClient } from "@/utils/supabase/server";
 // import { redirect } from "next/navigation";
-// import { supabase } from "@/utils/supabase/client";
-
-// // import { SubmitButton } from "./submit-button";
 
 // export default function Login({
 //   searchParams,
@@ -131,3 +128,41 @@
 //     </div>
 //   );
 // }
+
+import { login, signup } from "./actions";
+
+export default function LoginPage() {
+  return (
+    <form className="text-black block">
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          className="text-black"
+          id="email"
+          name="email"
+          type="email"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          className="text-black"
+          id="password"
+          name="password"
+          type="password"
+          required
+        />
+      </div>
+
+      <div>
+        <button className="bg-red-500" formAction={login}>
+          Log in
+        </button>
+        {/* <button className="bg-blue-500" formAction={signup}>
+          Sign up
+        </button> */}
+      </div>
+    </form>
+  );
+}

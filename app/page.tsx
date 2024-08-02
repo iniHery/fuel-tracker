@@ -4,7 +4,6 @@ import ResponsiveMobile from "./responsive-mobile/page";
 import AuthButton from "@/components/AuthButton";
 import MenuBar from "@/components/menu-bar/page";
 import DeployButton from "@/components/DeployButton";
-// import { supabase } from "../app/auth/login";
 
 export default function Home() {
   return (

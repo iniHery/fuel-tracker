@@ -1,9 +1,12 @@
+// "use clinet";
+
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import LoginPage from "@/app/login/page";
 
 export default async function AuthButton() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -12,7 +15,7 @@ export default async function AuthButton() {
   const signOut = async () => {
     "use server";
 
-    const supabase = createClient();
+    const supabase = await createClient();
     await supabase.auth.signOut();
     return redirect("/login");
   };
@@ -27,11 +30,31 @@ export default async function AuthButton() {
       </form>
     </div>
   ) : (
-    <Link
-      href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-    >
-      Login
-    </Link>
+    <div>
+      <div>
+        <LoginPage></LoginPage>
+      </div>
+      <div>
+        <Link
+          href="/sign-up"
+          className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+        >
+          Sign Up
+        </Link>
+      </div>
+    </div>
+
+    // <div
+    //   // href="/login"
+    //   className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+    // >
+    //   </LoginPage>
+    // </div>
+    //   <Link
+    //   href="/sign-up"
+    //   className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+    // >
+    //   Sign Up
+    // </Link>
   );
 }
